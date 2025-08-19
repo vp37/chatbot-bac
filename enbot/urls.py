@@ -15,10 +15,17 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.urls import path
+from django.http import JsonResponse
 from chatai.views import FinanceChatBotView
 
+# Root view
+def index(request):
+    return JsonResponse({"message": "Enbot backend is running!"})
+
 urlpatterns = [
+    path("", index),  # root path
     path("chat/", FinanceChatBotView.as_view(), name="FinanceChatBotView"),
 ]
+
 
 
