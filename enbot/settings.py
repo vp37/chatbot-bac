@@ -26,9 +26,7 @@ SECRET_KEY = 'django-insecure-^b=zzh^f(%-=w%_j@yu3k7vc1#*krs=dmo8_6*^6#8_570!sp!
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    "127.0.0.1",               # local dev
-    "localhost",               # local dev
-    "chatbot-bac.onrender.com" # your Render backend
+    "chatbot-bac.onrender.com"
 ]
 
 
@@ -133,5 +131,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOW_ALL_ORIGINS = True   # dev purpose only
 
-
+CORS_ALLOWED_ORIGINS = [
+    "https://your-frontend-host.com"
+]
 
