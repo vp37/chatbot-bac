@@ -28,9 +28,6 @@ DEBUG = False
 ALLOWED_HOSTS = ["*"]
 
 
-
-
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -129,10 +126,12 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CORS_ALLOW_ALL_ORIGINS = False   # dev purpose only
+CORS_ALLOW_ALL_ORIGINS = True   # dev purpose only
 
 CORS_ALLOWED_ORIGINS = [
-    "https://chatbot-fro.vercel.app",  # NO trailing slash
+    "https://chatbot-fro.vercel.app",
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",  # NO trailing slash
 ]
 
 USE_X_FORWARDED_HOST = True
