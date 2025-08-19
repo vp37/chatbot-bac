@@ -132,6 +132,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ALLOW_ALL_ORIGINS = True   # dev purpose only
 
 CORS_ALLOWED_ORIGINS = [
-    "https://your-frontend-host.com"
+    "https://chatbot-fro.vercel.app",  # NO trailing slash
 ]
+
 
