@@ -14,11 +14,17 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.http import JsonResponse
 from django.urls import path
 from chatai.views import FinanceChatBotView
 
+def home(request):
+    return JsonResponse({"status": "ok", "message": "Django backend running ✅"})
+
 urlpatterns = [
+    path("", home, name="home"),  # root URL
     path("chat/", FinanceChatBotView.as_view(), name="FinanceChatBotView"),
 ]
+
 
 
