@@ -40,11 +40,10 @@ class FinanceChatBotView(View):
             body = json.loads(request.body)
             user_message = body.get("message")
 
-            model = genai.GenerativeModel("gemini-1.5-flash")
-            response = model.generate_content([
-                BOT_PROMPT,
-                f"User: {user_message}"
-            ])
+            model = genai.GenerativeModel("gemini-2.0-flash")
+            response = model.generate_content(
+                f"{BOT_PROMPT}\nUser: {user_message}\nAI:"
+            )
 
             return JsonResponse({"reply": response.text})
         except Exception as e:
