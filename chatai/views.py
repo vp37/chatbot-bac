@@ -23,6 +23,10 @@ BOT_PROMPT = """
 @method_decorator(csrf_exempt, name='dispatch')
 class FinanceChatBotView(View):
 
+    def get(self, request):
+        # Simple health check so browser GET won't show 405
+        return JsonResponse({"status": "ok", "message": "Finance ChatBot API is running!"})
+
     def post(self, request):
         try:
             body = json.loads(request.body)
